@@ -1,6 +1,6 @@
 
 
-const LoginPage = () => {
+const RegisterPage = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default RegisterPage;
