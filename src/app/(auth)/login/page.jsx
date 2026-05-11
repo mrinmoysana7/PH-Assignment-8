@@ -40,12 +40,14 @@ const LoginPage = () => {
   const handleGoogleSignin = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
+      callbackURL: "/",
     });
   };
 
   const handleGithubSignin = async () => {
     const data = await authClient.signIn.social({
       provider: "github",
+      callbackURL: "/",
     });
   };
 
