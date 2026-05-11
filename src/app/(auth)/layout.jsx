@@ -1,11 +1,13 @@
+import Navbar from "@/components/shared/Navbar";
 
 
-const layout = () => {
+const AuthLayout = ({children}) => {
     return (
         <div>
-            
+            <Navbar></Navbar>
+            {children}
         </div>
     );
 };
 
-export default layout;
+export default AuthLayout;
