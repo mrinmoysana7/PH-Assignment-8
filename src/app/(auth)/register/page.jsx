@@ -11,10 +11,14 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
+    const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const { register, handleSubmit } = useForm();
 
@@ -31,11 +35,12 @@ const RegisterPage = () => {
     console.log(authData, error);
 
     if (error) {
-      alert(error.message || "An error occurred during registration.");
+      toast.error(error.message || "An error occurred during registration.");
     } else if (authData) {
-      alert(
+      toast.success(
         "Registration successful! Please check your email to verify your account.",
       );
+      router.push("/login");
     }
   };
   return (
@@ -47,13 +52,21 @@ const RegisterPage = () => {
         {/* Name */}
         <TextField isRequired type="text">
           <Label>Name</Label>
-          <Input placeholder="Your Name" {...register("name")} className="w-full border border-gray-300 p-2 rounded-lg"/>
+          <Input
+            placeholder="Your Name"
+            {...register("name")}
+            className="w-full border border-gray-300 p-2 rounded-lg"
+          />
           <FieldError />
         </TextField>
         {/* Photo URL */}
         <TextField isRequired type="text">
           <Label>Photo URL</Label>
-          <Input placeholder="Your Photo URL" {...register("photoUrl")} className="w-full border border-gray-300 p-2 rounded-lg"/>
+          <Input
+            placeholder="Your Photo URL"
+            {...register("photoUrl")}
+            className="w-full border border-gray-300 p-2 rounded-lg"
+          />
           <FieldError />
         </TextField>
         {/* Email */}
@@ -68,7 +81,11 @@ const RegisterPage = () => {
           }}
         >
           <Label>Email</Label>
-          <Input placeholder="Your Email" {...register("email")} className="w-full border border-gray-300 p-2 rounded-lg"/>
+          <Input
+            placeholder="Your Email"
+            {...register("email")}
+            className="w-full border border-gray-300 p-2 rounded-lg"
+          />
           <FieldError />
         </TextField>
 
@@ -99,13 +116,18 @@ const RegisterPage = () => {
           </InputGroup>
         </TextField>
 
-        <Button type="submit" className="w-full flex items-center justify-center py-3 bg-blue-500 gap-2 text-white rounded-lg">
-          <Check />
-          Register
-        </Button>
+       
+          <Button
+            type="submit"
+            className="w-full flex items-center justify-center py-3 bg-blue-500 gap-2 text-white rounded-lg"
+          >
+            <Check />
+            Register
+          </Button>
+        
       </Form>
     </div>
   );
 };
- 
+
 export default RegisterPage;

@@ -215,13 +215,15 @@ const Navbar = () => {
             </div>
 
             {/* LOGOUT BUTTON */}
+           <Link href="/">
             <Button
               className="px-4 py-1 text-sm font-bold bg-white rounded-2xl hover:bg-gray-100 transition-colors"
               onClick={() => signOut()}
             >
               Logout
             </Button>
-          </div>
+           </Link>
+          </div> 
         ) : (
           <Link href="/login">
             <Button
