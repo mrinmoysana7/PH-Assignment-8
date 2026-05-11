@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const BannerPage = () => {
   return (
-    <div className="hero min-h-[80vh] flex bg-yellow-500 rounded-md">
+    <div className="hero min-h-[69vh] md:min-h-[65vh] flex bg-yellow-500">
       <div className="px-10 md:px-30 hero-content text-neutral-content">
         <div className="max-w-md space-y-5">
           <h1 className="font-semibold text-lg">PREMIUM COLLECTION</h1>
@@ -11,7 +13,9 @@ const BannerPage = () => {
             Luxury tiles for every space. <br></br> Elevate your home with
             timeless beauty.
           </p>
-          <button className="btn btn-primary">Browse Now</button>
+          <Link href="/all-tiles">
+            <button className="btn btn-primary">Browse Now</button>
+          </Link>
         </div>
       </div>
     </div>
