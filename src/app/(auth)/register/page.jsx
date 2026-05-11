@@ -15,7 +15,7 @@ import {
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const RegisterPage = () => {
     const router = useRouter();
@@ -45,6 +45,7 @@ const RegisterPage = () => {
   };
   return (
     <div className="container mx-auto min-h-[70vh] p-5 flex justify-center items-center  rounded-xl">
+      <ToastContainer />
       <Form
         className="flex w-96 flex-col gap-4 shadow-2xl p-10 rounded-xl"
         onSubmit={handleSubmit(onSubmit)}
