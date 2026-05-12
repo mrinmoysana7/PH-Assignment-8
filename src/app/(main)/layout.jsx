@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 
 const LayoutPage = ({ children }) => {
@@ -5,6 +6,7 @@ const LayoutPage = ({ children }) => {
     <div>
       <Navbar></Navbar>
       {children}
+      <Footer></Footer>
     </div>
   );
 };

@@ -1,16 +1,15 @@
-
-import BannerPage from "@/components/homepage/Banner";
-import FeaturedTilesPage from "@/components/homepage/FeaturedTiles";
+import FeaturedTiles from "@/components/homepage/FeaturedTiles";
+import HeroSlider from "@/components/homepage/HeroSlider";
 import MarqueePage from "@/components/shared/Marquee";
+import { getAllTiles } from "@/lib/data";
 
-
-const HomePage = () => {
+const HomePage = async () => {
+  const tiles = await getAllTiles();
   return (
     <div className="">
-      {/* <h2>This is my home page</h2> */}
-      <BannerPage></BannerPage>
+      <HeroSlider />
       <MarqueePage></MarqueePage>
-      <FeaturedTilesPage></FeaturedTilesPage>
+      <FeaturedTiles tiles={tiles}></FeaturedTiles>
     </div>
   );
 };

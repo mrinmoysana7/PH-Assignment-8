@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Camera, Loader2, Mail, Pencil, Save, User } from "lucide-react";
 
 import { updateUser, useSession } from "@/lib/auth-client";
+import { toast, ToastContainer } from "react-toastify";
 
 const MyProfilePage = () => {
   const { data, isPending } = useSession();
@@ -45,11 +46,11 @@ const MyProfilePage = () => {
         image,
       });
 
-      alert("Profile Updated Successfully!");
+      toast.success("Profile Updated Successfully!");
     } catch (error) {
       console.log(error);
 
-      alert("Failed To Update Profile");
+      toast.error("Failed To Update Profile");
     } finally {
       setLoading(false);
     }
@@ -57,6 +58,7 @@ const MyProfilePage = () => {
 
   return (
     <div className="min-h-screen bg-[#f8f8f8] py-16 px-5">
+        <ToastContainer></ToastContainer>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Left Card */}
         <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
