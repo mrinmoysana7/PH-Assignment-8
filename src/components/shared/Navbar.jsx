@@ -166,7 +166,7 @@ const Navbar = () => {
             alt="Marbleva Logo"
             width={140}
             height={40}
-            className="w-[100px] md:w-[130px] lg:w-[150px] object-contain"
+            className="w-25 md:w-32.5 lg:w-37.5 object-contain"
             priority
           />
         </Link>
@@ -200,7 +200,7 @@ const Navbar = () => {
               <div className="hidden sm:block text-right leading-tight">
                 <p className="text-xs text-black/70">Welcome</p>
 
-                <p className="text-sm md:text-base font-semibold truncate max-w-[90px] md:max-w-[140px]">
+                <p className="text-sm md:text-base font-semibold truncate max-w-22.5 md:max-w-35">
                   {user.name}
                 </p>
               </div>

@@ -1,7 +1,7 @@
 const MainLoadingPage = () => {
   return (
-    <div>
-      <span className="loading loading-spinner loading-xl"></span>
+    <div className="flex justify-center items-center min-h-screen">
+      <span className="loading loading-spinner text-warning w-13"></span>
     </div>
   );
 };
