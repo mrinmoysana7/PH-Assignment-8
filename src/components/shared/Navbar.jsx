@@ -192,7 +192,7 @@ const Navbar = () => {
       {/* RIGHT */}
       <div className="navbar-end">
         {isPending ? (
-          <Spinner color="warning" />
+          <span className="loading loading-spinner text-warning"></span>
         ) : user ? (
           <div className="flex items-center gap-2 md:gap-4">
             {/* USER INFO */}
